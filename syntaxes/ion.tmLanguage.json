@@ -1,0 +1,140 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Ion",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#chars"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#variables"
+        }
+    ],
+    "repository": {
+        "block-comment": {
+            "patterns": [
+                {
+                    "name": "comment.block.ion",
+                    "begin": "/\\*",
+                    "end": "\\*/",
+                    "patterns": [
+                        {
+                            "include": "#block-comment"
+                        }
+                    ]
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "include": "#block-comment"
+                },
+                {
+                    "name": "comment.line.double-slash.ion",
+                    "begin": "//",
+                    "end": "\n"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.ion",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "include": "#stringcontent"
+                        }
+                    ]
+                }
+            ]
+        },
+        "chars": {
+            "patterns": [
+                {
+                    "name": "string.quoted.single.ion",
+                    "match": "'([^'\\\\]|\\\\(x\\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.))'"
+                }
+            ]
+        },
+        "stringcontent": {
+            "patterns": [
+                {
+                    "name": "constant.character.escape.ion",
+                    "match": "\\\\([nrt'\"\\\\]|(x[0-9a-fA-F]{2})|(u\\{[0-9a-fA-F]+\\}))"
+                },
+                {
+                    "name": "invalid.illegal.unrecognized-string-escape.ion",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.float.ion",
+                    "match": "\\b[0-9][0-9_]*(\\.[0-9][0-9_]*)?([eE][+-]?[0-9_]+)?\\b"
+                },
+                {
+                    "name": "constant.numeric.decimal.ion",
+                    "match": "\\b[0-9][0-9_]*\\b"
+                },
+                {
+                    "name": "constant.numeric.hexadecimal.ion",
+                    "match": "\\b0x[a-fA-F0-9_]+\\b"
+                },
+                {
+                    "name": "constant.numeric.octal.ion",
+                    "match": "\\b0o[0-7_]+\\b"
+                },
+                {
+                    "name": "constant.numeric.binary.ion",
+                    "match": "\\b0b[01_]+\\b"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.conditional.ion",
+                    "match": "\\b(assert|static_assert|import|foreign|inline|intrinsic|if|else|while|do|for|break|continue|return|switch|case|default|goto)\\b"
+                },
+                {
+                    "name": "keyword.default.ion",
+                    "match": "\\b(enum|struct|union|const|var|func|new|typedef|typeof|sizeof|alignof|offsetof|true|false)\\b"
+                },
+                {
+                    "name": "entity.name.type.ion",
+                    "match": "\\b(void|bool|char|schar|uchar|short|ushort|int|uint|long|ulong|llong|ullong|wchar|int8|uint8|int16|uint16|int32|uint32|int64|uint64|usize|ssize|uintptr|intptr)\\b"
+                }
+            ]
+        },
+        "variables": {
+            "patterns": [
+                {
+                    "name": "meta.variable.ion",
+                    "patterns": [
+                        {
+                            "match": "\\b[_a-zA-Z0-9\\?!\\-\\+\\=][_a-zA-Z0-9\\?\\!\\-\\+\\=]*\\b",
+                            "name": "variable.ion"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "scopeName": "source.ion"
+}
