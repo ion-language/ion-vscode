@@ -1,7 +1,7 @@
 {
     "name": "ion-vscode",
     "displayName": "Ion Programming Language",
-    "description": "Syntax highlighting for the Ion programming language created by Per Vognsen and maintained by the Community",
+    "description": "Ion language support for VS Code. Ion was created by Per Vognsen and is maintained by the Community",
     "version": "0.0.1",
     "icon": "images/ion_icon.png",
     "publisher": "RednibCoding",
@@ -61,5 +61,9 @@
                 }
             }
         }
+    },
+    "dependencies": {
+        "vscode-languageclient": "^8.1.0",
+        "vscode-languageserver": "^8.1.0"
     }
 }
