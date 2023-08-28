@@ -1,11 +1,12 @@
 {
     "name": "ion-vscode",
-    "displayName": "ion-vscode",
-    "description": "Syntax highlighting for the Ion programming language",
+    "displayName": "Ion Programming Language",
+    "description": "Syntax highlighting for the Ion programming language created by Per Vognsen and maintained by the Community",
     "version": "0.0.1",
     "icon": "images/ion_icon.png",
     "publisher": "RednibCoding",
     "license": "MIT",
+    "main": "./extension.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/RednibCoding/ion-vscode"
@@ -21,7 +22,7 @@
             {
                 "id": "ion",
                 "aliases": [
-                    "ion",
+                    "Ion",
                     "ion"
                 ],
                 "extensions": [
@@ -36,6 +37,29 @@
                 "scopeName": "source.ion",
                 "path": "./syntaxes/ion.tmLanguage.json"
             }
-        ]
+        ],
+        "breakpoints": [
+            {
+                "language": "ion"
+            }
+        ],
+        "debuggers": [
+            {
+                "type": "cppdbg",
+                "languages": [
+                    "ion"
+                ]
+            }
+        ],
+        "configuration": {
+            "title": "Ion Language Extension",
+            "properties": {
+                "IonGDB.Path": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Path to the GDB debugger"
+                }
+            }
+        }
     }
 }
