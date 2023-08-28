@@ -17,7 +17,7 @@ WorkspaceRoot/
   └─main.ion
 ```
 
-Make sure at the root of your workspace there's a folder named `main`, and within that folder, a file named `main.ion` containing the main function of your Ion program.
+Make sure at the root of your workspace there's a folder named `main`, and within that folder, a file that contains the `main` function of your Ion program.
 The `task.json` expects this structure.
 
 ## Features
