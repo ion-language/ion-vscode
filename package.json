@@ -2,7 +2,7 @@
     "name": "ion-vscode",
     "displayName": "Ion Programming Language",
     "description": "Ion language support for VS Code. Ion was created by Per Vognsen and is maintained by the Community",
-    "version": "0.0.1",
+    "version": "0.2.5",
     "icon": "images/ion_icon.png",
     "publisher": "RednibCoding",
     "license": "MIT",
@@ -28,6 +28,10 @@
                 "extensions": [
                     ".ion"
                 ],
+                "icon": {
+                    "light": "./images/ion_icon.png",
+                    "dark": "./images/ion_icon.png"
+                },
                 "configuration": "./language-configuration.json"
             }
         ],
