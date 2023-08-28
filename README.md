@@ -34,8 +34,10 @@ The `task.json` expects this structure.
 ## How to Install
 
 - Clone or download the repository.
-- Copy the entire repository folder into the `<user home>/.vscode/extensions` directory.
-- Restart VS Code.
+- Open the extension's tab in VS Code (Ctrl + Shift + X).
+- Click on the three dots in the top-right corner.
+- Select `Install from VSIX...`
+- Select the `ion-vscode-0.2.5.vsix` file in the `vsix` folder in the downloaded repo.
 
 ## Configuration
 
